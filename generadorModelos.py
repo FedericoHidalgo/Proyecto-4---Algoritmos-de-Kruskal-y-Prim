@@ -42,9 +42,7 @@ def modeloMalla(m, n, dirigido = False):
         if i > 0 and (i + n) < m*n+1:
             G.agregarArista(i-1, (i-1)+n, ' -> ')
     
-    T = G.KruskalD()
-
-    return T
+    return G
 
 
 def modeloErdosRenyi(n, m, dirigido = False):
@@ -55,7 +53,7 @@ def modeloErdosRenyi(n, m, dirigido = False):
     G = Grafo(dirigido)
     #Condiciones iniciales
     nodos = 1   #>1
-    aristas = n-2   #>=n-1
+    aristas = n   #>=n-1
     inicio = condicionesIniciales(n, m, nodos, aristas)
     if inicio != True:
         #Se interrumpe la ejecución del método si no se cumplen las
